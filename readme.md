@@ -1,6 +1,6 @@
 # sort-ids [![unstable](https://img.shields.io/badge/stability-unstable-green.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/dy/sort-ids.svg?branch=master)](https://travis-ci.org/dy/sort-ids)
 
-Sort input array, but return sorted ids of initial array elements, keeping the initial array untouched.
+Sort input array, but return sorted ids of the initial array numbers, keeping the initial array unchanged.
 
 Useful to make linked sorting of multiple arrays, where the second (n-th) array should be sorted the same way as the first one.
 
@@ -22,6 +22,10 @@ var sortedNames = reorder(b, ids)
 ```
 
 See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input array based on a list of ids.
+
+## Acknowledgement
+
+The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-points-2d](https://ghub.io/snap-points-2d), which was eventually implemented. But turned out there are the other applications, like sorting colors etc.
 
 ## License
 
