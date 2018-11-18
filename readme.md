@@ -23,7 +23,7 @@ See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input
 
 ## Motivation
 
-This package is ~ 6 times faster compared to sorting function. That is achieved by packing input `value - id` pairs into a single `float64` value and performing native sort on that _Float64Array_, then unpacking the `ids` back. To overcome precision loss, input numbers are normalized and evenly distributed to available range of values, so practically speaking there is a chance of mis-sorted values of.
+This package is >= 6 times faster compared to sorting function. That is achieved by packing input `value - id` pairs into a single `float64` value and performing native sort on that _Float64Array_, then unpacking the `ids` back.
 
 
 ## Acknowledgement
