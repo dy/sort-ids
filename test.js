@@ -6,16 +6,19 @@ var range = require('array-range')
 var rearrange = require('array-rearrange')
 var now = require('performance-now')
 
-var N = 10000
+var N = 100000
 
 
 t('sort arr input', t => {
+	var arr = [0x0, 0xf, 0xff, 0xfff, 0xffff, 0xfffff, 0xffffff, 0xfffffff, 0xffffffff]
+	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort(), 'checkpoints')
+
 	var arr = new Array(N)
 	for (var i = 0; i < arr.length; i++) {
 		arr[i] = Math.random() * 0xffffffff
 	}
-
 	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort())
+
 	t.end()
 })
 t('sort uint32 input low', t => {
@@ -29,6 +32,12 @@ t('sort uint32 input low', t => {
 	t.end()
 })
 t('sort uint32 input full', t => {
+	var arr = new Uint32Array([0x0, 0xf, 0xff, 0xfff, 0xffff, 0xfffff, 0xffffff, 0xfffffff, 0xffffffff])
+	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort(), 'checkpoints')
+
+	var arr = new Uint32Array([ 3459521841, 2545901525 ])
+	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort(), 'checkpoints')
+
 	var arr = new Uint32Array(N)
 	for (var i = 0; i < arr.length; i++) {
 		arr[i] = Math.random() * 0xffffffff

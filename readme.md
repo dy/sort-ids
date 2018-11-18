@@ -1,6 +1,6 @@
 # sort-ids [![unstable](https://img.shields.io/badge/stability-unstable-green.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/dy/sort-ids.svg?branch=master)](https://travis-ci.org/dy/sort-ids)
 
-Sort input array, but return sorted ids of the array items, keeping the initial array unchanged.
+Sort input array, return sorted ids of the array items, keeping the initial array unchanged.
 
 Useful to perform linked sorting of multiple arrays, where linked array[s] should be sorted the same way as the primary one.
 
@@ -23,7 +23,7 @@ See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input
 
 ## Motivation
 
-This package is ~ 6 times faster compared to sorting function. That is achieved by packing input `value - id` pairs into a single `float64` value and performing native sort on that _Float64Array_, then unpacking the `ids` back. To overcome precision loss, input numbers are normalized and evenly distributed to available range of values, so practically speaking chance of mis-sorted values is `< 0.001%`.
+This package is ~ 6 times faster compared to sorting function. That is achieved by packing input `value - id` pairs into a single `float64` value and performing native sort on that _Float64Array_, then unpacking the `ids` back. To overcome precision loss, input numbers are normalized and evenly distributed to available range of values, so practically speaking there is a chance of mis-sorted values of.
 
 
 ## Acknowledgement
