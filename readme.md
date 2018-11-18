@@ -11,7 +11,7 @@ var sort = require('sort-ids')
 var reorder = require('array-rearrange')
 
 var rates = [.12, .47, .52, .97, ...sourceNumbers]
-var names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedArray]
+var names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedItems]
 
 var ids = sortIds(rates)
 
