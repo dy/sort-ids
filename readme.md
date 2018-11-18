@@ -28,7 +28,7 @@ This package is ~ 6 times faster compared to sorting function. That is achieved 
 
 ## Acknowledgement
 
-The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-points-2d](https://ghub.io/snap-points-2d) and eventually implemented. But turned out there may be the other applications, like [sorting colors](https://twitter.com/winkerVSbecks/status/1063919602038685697) etc.
+The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-points-2d](https://ghub.io/snap-points-2d) and eventually implemented. But there may be other applications, like [sorting colors](https://twitter.com/winkerVSbecks/status/1063919602038685697) etc.
 
 ## License
 
