@@ -1,0 +1,43 @@
+{
+  "name": "sort-ids",
+  "version": "1.4.1",
+  "description": "Calculate sorting identifiers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dy/to-uint8.git"
+  },
+  "keywords": [
+    "uint8",
+    "float",
+    "sort",
+    "linked-sort",
+    "multisort",
+    "multiple sort",
+    "point-cluster",
+    "snap-points",
+    "packed sort",
+    "sort-numbers",
+    "sort pixels",
+    "sort colors"
+  ],
+  "author": "Dmitry Yv. <dfcreative@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dy/to-uint8/issues"
+  },
+  "homepage": "https://github.com/dy/to-uint8#readme",
+  "dependencies": {
+    "compute-dtype": "^1.0.0",
+    "typedarray-pool": "^1.1.0"
+  },
+  "devDependencies": {
+    "array-range": "^1.0.1",
+    "array-rearrange": "^2.2.2",
+    "performance-now": "^2.1.0",
+    "tape": "^4.9.1"
+  }
+}
