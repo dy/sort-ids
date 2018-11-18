@@ -109,7 +109,7 @@ function unpack(ids, arr) {
 
 
 
-t('bench', t => {
+t.skip('bench', t => {
 	var N = 1e6
 	var arr = new Float64Array(N)
 	for (var i = 0; i < arr.length; i++) {
