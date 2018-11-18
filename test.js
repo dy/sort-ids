@@ -6,7 +6,7 @@ var range = require('array-range')
 var rearrange = require('array-rearrange')
 var now = require('performance-now')
 
-var N = 100000
+var N = 1e5
 
 
 t('sort arr input', t => {
@@ -15,7 +15,7 @@ t('sort arr input', t => {
 
 	var arr = new Array(N)
 	for (var i = 0; i < arr.length; i++) {
-		arr[i] = Math.random() * 0xffffffff
+		arr[i] = (Math.random() * 2. - 1.) * 0xffffffff
 	}
 	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort())
 
@@ -68,7 +68,7 @@ t('sort uint8 input', t => {
 t('sort float64 input', t => {
 	var arr = new Float64Array(N)
 	for (var i = 0; i < arr.length; i++) {
-		arr[i] = Math.random() * Number.MAX_VALUE
+		arr[i] = (Math.random() - .5) * Number.MAX_VALUE * 2
 	}
 
 	t.deepEqual(unpack(sort(arr), arr), new Float64Array(arr).sort())
