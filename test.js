@@ -109,7 +109,7 @@ function unpack(ids, arr) {
 
 
 
-t.skip('bench', t => {
+t('bench', t => {
 	var N = 1e6
 	var arr = new Float64Array(N)
 	for (var i = 0; i < arr.length; i++) {
@@ -134,12 +134,18 @@ t.skip('bench', t => {
 	var ids = sort(b)
 	bTime = now() - bTime
 
+	// sort by ids fast (readme)
+	var c = arr.slice()
+	var cTime = now()
+	var ids = sort(c, false)
+	cTime = now() - cTime
+
 	// rearrange (adds to the time)
 	var iTime = now()
 	rearrange(b, ids)
 	iTime = now() - iTime
 
-	console.log(aTime,  bTime)
+	console.log(aTime,  bTime, cTime)
 	t.ok(aTime > bTime)
 
 	t.end()

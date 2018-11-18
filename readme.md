@@ -19,6 +19,10 @@ var sortedRates = reorder(a, ids)
 var sortedNames = reorder(b, ids)
 ```
 
+## `ids = sortIds(array, ids?, precise=true)`
+
+Calculate ids corresponding to sorted input array. Optionally pass input `ids` array. `precise` flag makes sure no missorts took place and resolves them, if any. Disabling that can save `~30ms` for `1e6` items input arrays.
+
 See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input array based on a list of ids.
 
 ## Motivation

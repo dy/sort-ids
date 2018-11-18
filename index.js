@@ -3,8 +3,17 @@
 var pool = require('typedarray-pool')
 var nextPow2 = require('next-pow-2')
 
-module.exports = function sort (arr, ids) {
+module.exports = function sort (arr, ids, precise) {
+  if (!arr) return null
+  if (ids === false || ids === true) {
+    precise = ids
+    ids = null
+  }
+
   var l = arr.length
+
+  if (precise == null) precise = Array.isArray(arr) || arr.constructor.BYTES_PER_ELEMENT > 7
+
   var idMask = Math.min(nextPow2(l) - 1, 0xffffffff)
   var idBits = idMask.toString(2).length
 
@@ -47,7 +56,7 @@ module.exports = function sort (arr, ids) {
   }
 
   // check if the sequence is ever-increasing and do final swaps (since there might be missorts)
-  if (l > 1e5 && arr.constructor.BYTES_PER_ELEMENT > 6 || Array.isArray(arr)) {
+  if (precise) {
     for (var i = 1; i < ids.length; i++) {
       var left = arr[ids[i]], right = arr[ids[i - 1]]
       if (left < right) {
