@@ -1,6 +1,6 @@
 # sort-ids [![unstable](https://img.shields.io/badge/stability-unstable-green.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/dy/sort-ids.svg?branch=master)](https://travis-ci.org/dy/sort-ids)
 
-Sort input array, but return sorted ids of the initial array numbers, keeping the initial array unchanged.
+Sort input array, but return sorted ids of the array items, keeping the initial array unchanged.
 
 Useful to perform linked sorting of multiple arrays, where linked array[s] should be sorted the same way as the primary one.
 
