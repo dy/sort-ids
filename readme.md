@@ -2,9 +2,7 @@
 
 Sort input array, but return sorted ids of the initial array numbers, keeping the initial array unchanged.
 
-Useful to make linked sorting of multiple arrays, where the second (n-th) array should be sorted the same way as the first one.
-
-This package is ~ 6 times faster compared to sorting function.
+Useful to perform linked sorting of multiple arrays, where linked array[s] should be sorted the same way as the primary one.
 
 [![npm install sort-ids](https://nodei.co/npm/sort-ids.png?mini=true)](https://npmjs.org/package/sort-ids/)
 
@@ -23,9 +21,14 @@ var sortedNames = reorder(b, ids)
 
 See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input array based on a list of ids.
 
+## Motivation
+
+This package is ~ 6 times faster compared to sorting function. That is achieved by packing input `value - id` pairs into a single `float64` value and performing native sort on that _Float64Array_, then unpacking the `ids` back. To overcome precision loss, input numbers are normalized and evenly distributed to available range of values, so practically speaking chance of mis-sorted values is `< 0.001%`.
+
+
 ## Acknowledgement
 
-The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-points-2d](https://ghub.io/snap-points-2d), which was eventually implemented. But turned out there are the other applications, like sorting colors etc.
+The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-points-2d](https://ghub.io/snap-points-2d) and eventually implemented. But turned out there may be the other applications, like [sorting colors]() etc.
 
 ## License
 

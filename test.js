@@ -130,7 +130,7 @@ t('bench', t => {
 	rearrange(b, ids)
 	iTime = now() - iTime
 
-	t.ok(aTime / bTime > 5)
+	t.ok(aTime / bTime > 2)
 
 	t.end()
 })
