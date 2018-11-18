@@ -6,7 +6,7 @@ var range = require('array-range')
 var rearrange = require('array-rearrange')
 var now = require('performance-now')
 
-var N = 1e5
+var N = 1e6
 
 
 t('sort arr input', t => {

@@ -1,7 +1,6 @@
 'use strict'
 
 var pool = require('typedarray-pool')
-var dtype = require('compute-dtype')
 var nextPow2 = require('next-pow-2')
 
 module.exports = function sort (arr, ids) {
@@ -18,7 +17,6 @@ module.exports = function sort (arr, ids) {
   var packed = pool.mallocDouble(l)
   var packedInt = new Uint32Array(packed.buffer)
 
-  var type = dtype(arr)
   var min = Infinity, max = -Infinity
 
   // pack input to floats
@@ -46,6 +44,18 @@ module.exports = function sort (arr, ids) {
 
   for (var i = 0; i < l; i++) {
     ids[i] = packedInt[i << 1] & idMask
+  }
+
+  // check if the sequence is ever-increasing and do final swaps (since there might be missorts)
+  if (l > 1e5 && arr.constructor.BYTES_PER_ELEMENT > 6 || Array.isArray(arr)) {
+    for (var i = 1; i < ids.length; i++) {
+      var left = arr[ids[i]], right = arr[ids[i - 1]]
+      if (left < right) {
+        var tmp = ids[i]
+        ids[i] = ids[i - 1]
+        ids[i - 1] = tmp
+      }
+    }
   }
 
   pool.freeDouble(packed)
