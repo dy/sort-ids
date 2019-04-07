@@ -7,7 +7,7 @@ Useful to perform linked sorting of multiple arrays, where linked array[s] shoul
 [![npm install sort-ids](https://nodei.co/npm/sort-ids.png?mini=true)](https://npmjs.org/package/sort-ids/)
 
 ```js
-var sort = require('sort-ids')
+var sortIds = require('sort-ids')
 var reorder = require('array-rearrange')
 
 var rates = [.12, .47, .52, .97, ...sourceNumbers]
