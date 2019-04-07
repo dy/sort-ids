@@ -15,8 +15,8 @@ var names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedItems]
 
 var ids = sortIds(rates)
 
-var sortedRates = reorder(a, ids)
-var sortedNames = reorder(b, ids)
+var sortedRates = reorder(rates, ids)
+var sortedNames = reorder(names, ids)
 ```
 
 ## `ids = sortIds(array, ids?, precise=true)`
