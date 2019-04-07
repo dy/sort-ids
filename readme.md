@@ -21,7 +21,7 @@ var sortedNames = reorder(names, ids)
 
 ## `ids = sortIds(array, ids?, precise=true)`
 
-Calculate ids corresponding to sorted input array. Optionally pass input `ids` array. `precise` flag makes sure no missorts took place and resolves them, if any. Disabling that can save `~30ms` for `1e6` items input arrays.
+Calculate ids corresponding to sorted input array. The input array isn't changed. Optionally pass input `ids` array to store some initial order of ids. `precise` flag makes sure no missorts took place and resolves them, if any. Disabling that can save `~30ms` for `1e6` items input arrays.
 
 See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input array based on a list of ids.
 
