@@ -48,8 +48,7 @@ module.exports = function sort (arr, ids, precise) {
 
   if (!ids) ids = new Uint32Array(l)
 
-  // do native sort
-  packed = packed.sort()
+  packed.sort((a, b) => (a - b))
 
   for (var i = 0; i < l; i++) {
     ids[i] = packedInt[i << 1] & idMask
