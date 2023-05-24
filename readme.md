@@ -7,8 +7,8 @@ Useful to perform linked sorting of multiple arrays, where linked array[s] shoul
 [![npm install sort-ids](https://nodei.co/npm/sort-ids.png?mini=true)](https://npmjs.org/package/sort-ids/)
 
 ```js
-var sortIds = require('sort-ids')
-var reorder = require('array-rearrange')
+import sortIds from 'sort-ids'
+import reorder from 'array-rearrange'
 
 var rates = [.12, .47, .52, .97, ...sourceNumbers]
 var names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedItems]
@@ -21,7 +21,7 @@ var sortedNames = reorder(names, ids)
 
 ## `ids = sortIds(array, ids?, precise=true)`
 
-Calculate ids corresponding to sorted input array. The input array isn't changed. Optionally pass input `ids` array to store some initial order of ids. `precise` flag makes sure no missorts took place and resolves them, if any. Disabling that can save `~30ms` for `1e6` items input arrays.
+Calculate ids corresponding to sorted input array. The input array isn't changed. Optionally pass input `ids` - some initial order of ids. `precise` flag makes sure no missorts took place and resolves them, if any. Disabling that can save `~30ms` for `1e6` items input arrays.
 
 See also [array-rearrange](https://ghub.io/array-rearrange) for reordering input array based on a list of ids.
 
@@ -36,4 +36,4 @@ The idea was proposed by [Robert Monfera](https://github.com/monfera) for [snap-
 
 ## License
 
-(c) 2018 Dmitry Yv. MIT License
+(c) 2018 Dmitry Iv. MIT License

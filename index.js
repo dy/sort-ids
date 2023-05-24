@@ -1,9 +1,4 @@
-'use strict'
-
-var pool = require('typedarray-pool')
-var nextPow2 = require('next-pow-2')
-
-module.exports = function sort (arr, ids, precise) {
+export default function sort (arr, ids, precise) {
   if (!arr) return null
   if (ids === false || ids === true) {
     precise = ids
@@ -23,16 +18,15 @@ module.exports = function sort (arr, ids, precise) {
   // 2 → 0b11, 3 → 0b111 ...
   var freeMask = freeBits == 31 ? 0x7fffffff : ((1 << freeBits) - 1)
 
-  var packed = pool.mallocDouble(l)
+  var packed = new Float64Array(l)
   var packedInt = new Uint32Array(packed.buffer)
 
   var min = Infinity, max = -Infinity
 
   // pack input to floats
-  for (var i = 0; i < l; i++) {
-    var id = packedInt[i << 1]
+  for (var i = 0, invMask = ~idMask; i < l; i++) {
     packed[i] = arr[i]
-    packedInt[i << 1] &= ~idMask
+    packedInt[i << 1] &= invMask
   }
 
   // write id as insignificant part of fraction (more input length, more precision loss)
@@ -67,8 +61,17 @@ module.exports = function sort (arr, ids, precise) {
     }
   }
 
-  pool.freeDouble(packed)
-
   return ids
 }
 
+// from https://www.npmjs.com/package/next-pow-2: works only with i32 range
+function nextPow2 (v) {
+  v += v === 0
+  --v
+  v |= v >>> 1
+  v |= v >>> 2
+  v |= v >>> 4
+  v |= v >>> 8
+  v |= v >>> 16
+  return v + 1
+}

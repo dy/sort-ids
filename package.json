@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node test"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dy/sort-ids.git"
