@@ -1,4 +1,4 @@
-# sort-ids [![unstable](https://img.shields.io/badge/stability-unstable-green.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/dy/sort-ids.svg?branch=master)](https://travis-ci.org/dy/sort-ids)
+# sort-ids [![test](https://github.com/dy/sort-ids/actions/workflows/test.yml/badge.svg)](https://github.com/dy/sort-ids/actions/workflows/test.yml)
 
 Sort input array, return sorted ids of the array items, keeping the initial array unchanged.
 
