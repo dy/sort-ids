@@ -1,13 +1,12 @@
 {
   "name": "sort-ids",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Calculate sorting identifiers",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "node test"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dy/sort-ids.git"
