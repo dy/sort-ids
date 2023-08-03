@@ -10,13 +10,13 @@ Useful to perform linked sorting of multiple arrays, where linked array[s] shoul
 import sortIds from 'sort-ids'
 import reorder from 'array-rearrange'
 
-var rates = [.12, .47, .52, .97, ...sourceNumbers]
-var names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedItems]
+const rates = [.12, .47, .52, .97, ...sourceNumbers]
+const names = ['John', 'Alexa', 'Jimmy', 'Kate', ...linkedItems]
 
-var ids = sortIds(rates)
+const ids = sortIds(rates)
 
-var sortedRates = reorder(rates, ids)
-var sortedNames = reorder(names, ids)
+const sortedRates = reorder(rates, ids)
+const sortedNames = reorder(names, ids)
 ```
 
 ## `ids = sortIds(array, ids?, precise=true)`

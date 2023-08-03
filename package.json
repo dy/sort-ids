@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "Calculate sorting identifiers",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "node test"
   },

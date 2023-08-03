@@ -10,18 +10,9 @@ export default function sort (arr, ids, precise) {
   if (precise == null) precise = Array.isArray(arr) || arr.constructor.BYTES_PER_ELEMENT > 7
 
   var idMask = Math.min(nextPow2(l) - 1, 0xffffffff)
-  var idBits = idMask.toString(2).length
-
-  // we use free bits from ids part to store values as well
-  var freeBits = 32 - idBits
-
-  // 2 → 0b11, 3 → 0b111 ...
-  var freeMask = freeBits == 31 ? 0x7fffffff : ((1 << freeBits) - 1)
 
   var packed = new Float64Array(l)
   var packedInt = new Uint32Array(packed.buffer)
-
-  var min = Infinity, max = -Infinity
 
   // pack input to floats
   for (var i = 0, invMask = ~idMask; i < l; i++) {

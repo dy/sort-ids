@@ -1,10 +1,10 @@
 'use strict'
 
-var t = require('tape')
-var sort = require('./')
-var range = require('array-range')
-var rearrange = require('array-rearrange')
-var now = require('performance-now')
+import t from 'tape'
+import sort from './index.js'
+import range from 'array-range'
+import rearrange from 'array-rearrange'
+import now from 'performance-now'
 
 var N = 1e6
 
